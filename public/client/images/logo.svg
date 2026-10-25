@@ -1,0 +1,118 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="80 140 340 230" width="340" height="230">
+  <defs>
+    <!-- Gradient chính xanh dương -->
+    <linearGradient id="mainGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1E40AF;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#2563EB;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#60A5FA;stop-opacity:1" />
+    </linearGradient>
+    
+    <!-- Gradient phụ cho accent -->
+    <linearGradient id="accentGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#60A5FA;stop-opacity:0.6" />
+      <stop offset="100%" style="stop-color:#2563EB;stop-opacity:0.9" />
+    </linearGradient>
+    
+    <!-- Gradient cho vòng tròn trang trí -->
+    <radialGradient id="circleGrad" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" style="stop-color:#93C5FD;stop-opacity:0.3" />
+      <stop offset="100%" style="stop-color:#2563EB;stop-opacity:0" />
+    </radialGradient>
+
+    <!-- Gradient cho hook -->
+    <linearGradient id="hookGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#1E3A8A;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#3B82F6;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Vòng tròn trang trí nghệ thuật phía sau -->
+  <circle cx="250" cy="260" r="155" fill="none" stroke="url(#accentGrad)" stroke-width="0.8" stroke-dasharray="4,8" opacity="0.5"/>
+  
+  <!-- Vệt sáng trang trí -->
+  <ellipse cx="250" cy="265" rx="130" ry="130" fill="url(#circleGrad)" opacity="0.4"/>
+  
+  <!-- === HANGER - Thanh ngang cong nghệ thuật === -->
+  <!-- Thanh trái - đường cong mềm mại -->
+  <path d="M 250 220 
+           C 230 225, 180 235, 130 250 
+           Q 105 258, 100 262
+           Q 94 267, 100 272
+           Q 106 277, 130 270
+           C 175 255, 225 245, 250 240"
+        fill="url(#mainGrad)" opacity="0.95"/>
+  
+  <!-- Thanh phải - đường cong mềm mại -->
+  <path d="M 250 220 
+           C 270 225, 320 235, 370 250 
+           Q 395 258, 400 262
+           Q 406 267, 400 272
+           Q 394 277, 370 270
+           C 325 255, 275 245, 250 240"
+        fill="url(#mainGrad)" opacity="0.95"/>
+  
+  <!-- === HOOK - Móc treo nghệ thuật === -->
+  <path d="M 250 220 
+           C 250 210, 250 195, 255 180
+           C 260 165, 272 155, 278 155
+           C 288 155, 290 162, 286 170
+           C 282 178, 270 182, 260 185
+           C 252 188, 250 195, 250 205"
+        fill="none" stroke="url(#hookGrad)" stroke-width="7" stroke-linecap="round"/>
+  
+  <!-- === COLLAR - Cổ áo sơ mi nghệ thuật === -->
+  <!-- Cổ áo trái -->
+  <path d="M 250 240
+           L 215 280
+           L 195 268
+           L 235 235
+           Z"
+        fill="url(#mainGrad)" opacity="0.9"/>
+  
+  <!-- Cổ áo phải -->
+  <path d="M 250 240
+           L 285 280
+           L 305 268
+           L 265 235
+           Z"
+        fill="url(#mainGrad)" opacity="0.9"/>
+  
+  <!-- Cà vạt / dải lụa rủ xuống - nét nghệ thuật -->
+  <path d="M 244 245
+           C 242 265, 238 290, 240 310
+           C 241 320, 245 330, 250 340
+           C 255 330, 259 320, 260 310
+           C 262 290, 258 265, 256 245
+           L 250 240 Z"
+        fill="url(#mainGrad)" opacity="0.85"/>
+  
+  <!-- Điểm nhấn kim cương nhỏ trên cà vạt -->
+  <path d="M 250 275 L 253 280 L 250 285 L 247 280 Z" fill="white" opacity="0.7"/>
+  
+  <!-- === Đường cong trang trí nghệ thuật === -->
+  <!-- Swoosh trái -->
+  <path d="M 120 290 Q 180 310, 220 350" 
+        fill="none" stroke="#93C5FD" stroke-width="1.2" stroke-linecap="round" opacity="0.4"/>
+  
+  <!-- Swoosh phải -->
+  <path d="M 380 290 Q 320 310, 280 350" 
+        fill="none" stroke="#93C5FD" stroke-width="1.2" stroke-linecap="round" opacity="0.4"/>
+  
+  <!-- Chấm trang trí nhỏ -->
+  <circle cx="115" cy="288" r="2.5" fill="#60A5FA" opacity="0.5"/>
+  <circle cx="385" cy="288" r="2.5" fill="#60A5FA" opacity="0.5"/>
+  <circle cx="222" cy="352" r="2" fill="#93C5FD" opacity="0.4"/>
+  <circle cx="278" cy="352" r="2" fill="#93C5FD" opacity="0.4"/>
+  
+  <!-- Ngôi sao nhỏ trang trí -->
+  <path d="M 160 195 L 162 200 L 167 200 L 163 203 L 164 208 L 160 205 L 156 208 L 157 203 L 153 200 L 158 200 Z" 
+        fill="#93C5FD" opacity="0.35"/>
+  <path d="M 340 195 L 342 200 L 347 200 L 343 203 L 344 208 L 340 205 L 336 208 L 337 203 L 333 200 L 338 200 Z" 
+        fill="#93C5FD" opacity="0.35"/>
+  
+  <!-- Đường viền mảnh tạo chiều sâu cho hanger -->
+  <path d="M 250 222 C 230 227, 182 237, 133 252" 
+        fill="none" stroke="white" stroke-width="1" opacity="0.3" stroke-linecap="round"/>
+  <path d="M 250 222 C 270 227, 318 237, 367 252" 
+        fill="none" stroke="white" stroke-width="1" opacity="0.3" stroke-linecap="round"/>
+</svg>
