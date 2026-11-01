@@ -1,6 +1,7 @@
 extends ../../layouts/default.pug
 include ../../mixins/filterStatus.pug
 include ../../mixins/search.pug
+include ../../mixins/pagination.pug
 
 block main
     h1 Danh sách sản phẩm
@@ -42,3 +43,6 @@ block main
                             td 
                                 button(class="btn btn-warning btn-sm") Sửa 
                                 button(class="ml-1 btn btn-danger btn-sm") Xóa 
+
+
+    +pagination(pagination)

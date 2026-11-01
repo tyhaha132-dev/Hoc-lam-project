@@ -1,6 +1,7 @@
 const Product = require("../../models/product.model");
 const filterStatusHelpers = require("../../helpers/filterStatus");
 const searchHelpers = require("../../helpers/search");
+const paginationHelper = require("../../helpers/pagination");
 
 // [GET] /admin/products
 module.exports.index = async (req, res) => {
@@ -8,21 +9,28 @@ module.exports.index = async (req, res) => {
     deleted: false,
   };
 
-  // Tim kiem
+  // Tìm kiếm
   const search = searchHelpers(req.query);
 
   if (search.regex) {
     find.title = search.regex;
   }
 
-  // Bo loc
+  // Bộ lọc
   const filterStatus = filterStatusHelpers(req.query);
 
   if (req.query.status) {
     find.status = req.query.status;
   }
 
-  const products = await Product.find(find);
+  // Phân trang
+  const countProduct = await Product.countDocuments(find);
+  const pagination = paginationHelper(req.query, countProduct);
+
+  // Query sản phẩm
+  const products = await Product.find(find)
+    .limit(pagination.limitItems)
+    .skip(pagination.skip);
 
   // Truyen vao view
   res.render("admin/pages/products/index", {
@@ -30,5 +38,6 @@ module.exports.index = async (req, res) => {
     products: products,
     filterStatus: filterStatus,
     keyword: search.keyword,
+    pagination: pagination,
   });
 };
