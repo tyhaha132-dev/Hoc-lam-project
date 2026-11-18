@@ -99,6 +99,17 @@ if (formChangeMulti) {
     const CheckBoxMulti = document.querySelector("[checkbox-multi]");
     const inputChecked = document.querySelectorAll("input[name='id']:checked");
 
+    const typeChange = event.target.elements.type.value;
+    if (typeChange == "delete-all") {
+      const isConfirm = confirm(
+        "Bạn có chắc chắn muốn xóa những sản phẩm này !",
+      );
+
+      if (!isConfirm) {
+        return;
+      }
+    }
+
     if (inputChecked.length > 0) {
       let ids = [];
       const inputIds = formChangeMulti.querySelector("input[name='ids']");
@@ -118,6 +129,8 @@ if (formChangeMulti) {
 }
 
 // End Form-change-multi
+
+// Delete Product
 const buttonDelete = document.querySelectorAll("[button-delete]");
 if (buttonDelete.length > 0) {
   const formDeleteItem = document.querySelector("#form-delete-item");
@@ -137,4 +150,4 @@ if (buttonDelete.length > 0) {
     });
   });
 }
-// Delete Product
+// End Delete Product
