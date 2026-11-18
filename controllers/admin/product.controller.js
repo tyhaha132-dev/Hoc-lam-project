@@ -29,6 +29,7 @@ module.exports.index = async (req, res) => {
 
   // Query sản phẩm
   const products = await Product.find(find)
+    .sort({ position: "desc" })
     .limit(pagination.limitItems)
     .skip(pagination.skip);
 
@@ -56,9 +57,6 @@ module.exports.changeMulti = async (req, res) => {
   const type = req.body.type;
   const ids = req.body.ids.split(", ");
 
-  console.log(type);
-  console.log(ids);
-
   switch (type) {
     case "active":
       await Product.updateMany({ _id: { $in: ids } }, { status: type });
@@ -70,7 +68,12 @@ module.exports.changeMulti = async (req, res) => {
         { _id: { $in: ids } },
         { deleted: true, deletedAt: new Date() },
       );
-
+    case "change-position":
+      for (const item of ids) {
+        let [id, position] = item.split("-");
+        position = parseInt(position);
+        await Product.updateOne({ _id: id }, { position: position });
+      }
     default:
       break;
   }
